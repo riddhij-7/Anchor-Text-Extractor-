@@ -1,61 +1,89 @@
 Anchor Text Link Extractor v1.0
 
-This application allows quick and concurrent analysis of a list of URLs to find internal anchor texts pointing to a specified target domain.
+Anchor Text Link Extractor v1.0 is a desktop application that allows quick and concurrent analysis of multiple URLs to find anchor texts pointing to a specific target domain.
 
-How to Use
+Ideal for SEO specialists, web analysts, and developers who want to understand how their domain is being linked across various web pages.
 
-1. Configure Settings
+🚀 Features
 
-Target Domain: Enter the domain you are trying to find links to (e.g., digitalfarm.ae). The tool will only track links on the input pages that point to this domain.
+Concurrent Crawling – Analyze multiple URLs simultaneously with configurable threading.
 
-Max Concurrent Threads: Use the slider to set the number of parallel connections. The default of 8 is safe for most networks. Higher numbers run faster but may risk timeouts or temporary blocks from the sites being crawled.
+Domain-Based Filtering – Extract only links pointing to your chosen domain.
 
-2. Select Files
+Real-Time Progress Tracking – Watch live updates on progress and status.
 
-Select URL File: Click the button and choose the input file. This file must be a plain text file (.txt) where each URL you want to crawl is on a new line.
+Graceful Cancellation – Stop the process anytime safely.
 
-Start Extraction: Click the 🚀 Start Extraction button.
+CSV Export – Automatically saves clean, structured results in .csv format.
 
-Save Output CSV: A "Save File" dialog will immediately appear. Choose a location and name for your output CSV file. This file will contain all the results.
+🧩 How to Use
+1️⃣ Configure Settings
 
-3. Monitoring and Completion
+Target Domain: Enter the domain you want to track (e.g., digitalfarm.ae).
+Only links pointing to this domain will be extracted.
 
-The Progress Bar and Status Label will update in real-time, showing which URL is currently being processed and the overall completion status.
+Max Concurrent Threads:
+Use the slider to adjust the number of parallel connections.
 
-The 🛑 Cancel button appears while running, allowing you to stop the process gracefully at any time.
+Default: 8 (recommended)
 
-Once completed, the status will show the final message: ✅ Completed! Results saved to: [Your Output Path].
+2️⃣ Select Files
 
-For Developers
+Select URL File:
+Choose a .txt file containing the list of URLs (one per line).
 
-This section is for those who wish to explore the code, contribute features, or run the application from the source files.
+Start Extraction:
+Click the 🚀 Start Extraction button.
+A "Save File" dialog will appear — select the path and name for your output .csv file.
 
-Install Requirements: Ensure all dependencies are installed using the provided requirements.txt file:
+3️⃣ Monitor Progress
+
+The progress bar and status label update in real-time.
+
+The 🛑 Cancel button appears during processing — click it anytime to stop.
+
+When finished, you’ll see:
+✅ Completed! Results saved to: [Your Output Path]
+
+👨‍💻 For Developers
+🧱 Installation
+
+Clone this repository and install dependencies:
 
 pip install -r requirements.txt
 
+▶️ Run from Source
 
-
-Run: Execute the main GUI script:
+To launch the GUI:
 
 python3 anchor_text_gui.py
 
-Building the Executable 
+🏗️ Build Executable (.exe)
 
-This command is used to package the source code into the single, sharable .exe file.
+To package the app into a single executable file:
 
-Install PyInstaller (if not already done):
-
+1️⃣ Install PyInstaller
 pip install pyinstaller
 
-
-
-Run the Build Command:
-
+2️⃣ Build Command
 python -m PyInstaller --onefile --windowed --hidden-import=customtkinter anchor_text_gui.py
 
+3️⃣ Locate Output
 
+The built file will be located inside the /dist folder as:
+anchor_text_gui.exe
 
-Distribute: The final executable (anchor_text_gui.exe) is located in the dist folder.
+📦 Output Format
 
+The exported .csv file contains:
 
+Column	Description
+Source URL	The page URL where the anchor was found
+Anchor Text	The clickable text of the link
+Anchor Link	The full target URL of the link
+Link Type	Internal or external
+🧠 Notes
+
+Ensure all URLs in the input file are valid and accessible.
+
+This tool is intended for ethical and authorized use only.
