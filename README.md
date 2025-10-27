@@ -4,8 +4,6 @@ This application allows quick and concurrent analysis of a list of URLs to find 
 
 How to Use
 
-The tool is a standalone executable (.exe) and does not require any installation of Python or special libraries.
-
 1. Configure Settings
 
 Target Domain: Enter the domain you are trying to find links to (e.g., digitalfarm.ae). The tool will only track links on the input pages that point to this domain.
@@ -27,3 +25,37 @@ The Progress Bar and Status Label will update in real-time, showing which URL is
 The 🛑 Cancel button appears while running, allowing you to stop the process gracefully at any time.
 
 Once completed, the status will show the final message: ✅ Completed! Results saved to: [Your Output Path].
+
+For Developers
+
+This section is for those who wish to explore the code, contribute features, or run the application from the source files.
+
+Install Requirements: Ensure all dependencies are installed using the provided requirements.txt file:
+
+pip install -r requirements.txt
+
+
+
+Run: Execute the main GUI script:
+
+python3 anchor_text_gui.py
+
+Building the Executable 
+
+This command is used to package the source code into the single, sharable .exe file.
+
+Install PyInstaller (if not already done):
+
+pip install pyinstaller
+
+
+
+Run the Build Command:
+
+python -m PyInstaller --onefile --windowed --hidden-import=customtkinter anchor_text_gui.py
+
+
+
+Distribute: The final executable (anchor_text_gui.exe) is located in the dist folder.
+
+
