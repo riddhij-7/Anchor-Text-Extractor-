@@ -50,29 +50,35 @@ When finished, you’ll see:
 
 Clone this repository and install dependencies:
 
+```bash 
 pip install -r requirements.txt
+```
 
 ▶️ Run from Source
 
 To launch the GUI:
-
+```bash 
 python3 anchor_text_gui.py
-
+```
 🏗️ Build Executable (.exe)
 
 To package the app into a single executable file:
 
 1️⃣ Install PyInstaller
+```bash
 pip install pyinstaller
+```
 
 2️⃣ Build Command
+```bash
 python -m PyInstaller --onefile --windowed --hidden-import=customtkinter anchor_text_gui.py
-
+```
 3️⃣ Locate Output
 
 The built file will be located inside the /dist folder as:
+```bash
 anchor_text_gui.exe
-
+```
 📦 Output Format
 
 The exported .csv file contains:
